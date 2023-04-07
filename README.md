@@ -9,7 +9,8 @@ Experiments with RTK
 - Implement redux toolkit
 
 ## In progress
-- Implement MUI
+- Implement redux toolkit
 
 ## Done
 - Setup React project with Vite
+- Implement MUI
