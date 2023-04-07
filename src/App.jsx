@@ -1,31 +1,29 @@
-import { useState } from 'react'
 import './App.css'
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
+
 function App() {
-  const [open, setOpen] = useState(false)
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
-    <div>
-      <Button onClick={handleOpen}>Open modal</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box>
-         
-        </Box>
-      </Modal>
-    </div>
+    <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            RTK Test
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
 
