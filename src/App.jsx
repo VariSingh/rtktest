@@ -30,8 +30,6 @@ function App() {
   };
 
   const deleteUser = (id) => {
-    console.log("deleteUser");
-    console.log(id);
     dispatch(removeUser(id));
   };
 
