@@ -10,14 +10,11 @@ import { CssBaseline } from '@mui/material'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-  <CssBaseline />
-  <Router>
-    <Routes>
-    <Route path="/" element={<App/>} />
-    <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
-  </Router>
-</Provider>
+    <Router>
+      <CssBaseline />
+      <App />
+    </Router>
+  </Provider>
 );
 
 
