@@ -22,14 +22,37 @@ const authUser = true;
 const App = () => {
   return (
     <Routes>
-      <Route path="signin" element={<SignIn/>} />
-      <Route path="dashboard/admin-accounts"  element={
-            <ProtectedRoute authUser={authUser}>
-              <Header></Header>
-              <Sidebar></Sidebar>
-              <AdminAccounts />
-            </ProtectedRoute>
-          } />
+      <Route path="signin" element={<SignIn />} />
+      <Route
+        path="dashboard/admin-accounts"
+        element={
+          <ProtectedRoute authUser={authUser}>
+            <Header></Header>
+            <Sidebar></Sidebar>
+            <AdminAccounts />
+          </ProtectedRoute>
+        }
+      />
+      {/* <Route
+        path="dashboard/activity-log"
+        element={
+          <ProtectedRoute authUser={authUser}>
+            <Header></Header>
+            <Sidebar></Sidebar>
+            <ActivityLog />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="dashboard/settings"
+        element={
+          <ProtectedRoute authUser={authUser}>
+            <Header></Header>
+            <Sidebar></Sidebar>
+            <Settings />
+          </ProtectedRoute>
+        }
+      /> */}
     </Routes>
   );
 };

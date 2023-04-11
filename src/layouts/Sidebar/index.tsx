@@ -12,6 +12,7 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     const drawerWidth = 240;
@@ -31,7 +32,7 @@ const Sidebar = () => {
         <Toolbar />
         <Divider />
         <List>
-          <ListItem disablePadding>
+          <ListItem disablePadding component={Link} to="/dashboard/admin-dashboard">
             <ListItemButton>
               <ListItemIcon>
                 <PersonIcon />
@@ -40,7 +41,7 @@ const Sidebar = () => {
             </ListItemButton>
           </ListItem>
         </List>
-        <ListItem disablePadding>
+        <ListItem disablePadding component={Link} to="/dashboard/activity-log">
           <ListItemButton>
             <ListItemIcon>
               <DvrIcon />
@@ -48,7 +49,7 @@ const Sidebar = () => {
             <ListItemText primary={"Activity log"} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
+        <ListItem disablePadding component={Link} to="/dashboard/settings">
           <ListItemButton>
             <ListItemIcon>
               <TuneIcon />

@@ -14,21 +14,28 @@ import {
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../../store/slices/UserSlice";
+import { ADMIN, INACTIVE } from "../../constants";
+import SubmitButton from "../../components/SubmitButton";
 const AdminAccounts = () => {
   const dispatch = useDispatch();
-  //const { users } = useSelector((state) => state.users);
+  const { users } = useSelector((state) => state.users);
 
   const addNewUser = () => {
     console.log("addNewUser");
     const obj = {
       name: "User 4",
-      id: 4,
+      empId: 4,
+      role:ADMIN,
+      email:"user4@yopmail.com",
+      phone:9896098960,
+      lastLogin:"2021-09-01",
+      status: INACTIVE
     };
     dispatch(addUser(obj));
   };
 
-  const deleteUser = (id) => {
-    dispatch(removeUser(id));
+  const deleteUser = (empId) => {
+    dispatch(removeUser(empId));
   };
 
   function createData(name, empId, role, email, phone, lastLogin, status) {
@@ -120,6 +127,7 @@ const AdminAccounts = () => {
       >
         <Toolbar />
         <Typography variant="h5">List of Admin Accounts</Typography>
+        <SubmitButton color="error">Add new user</SubmitButton>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={12}>
             <TableContainer component={Paper}>
