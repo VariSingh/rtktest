@@ -7,10 +7,13 @@ Experiments with RTK
 - Setup React project with Vite
 - Implement MUI
 - Implement redux toolkit
+- Add routing
+- Responsive layout
 
 ## In progress
-- Implement redux toolkit
+- Add routing
 
 ## Done
 - Setup React project with Vite
 - Implement MUI
+- Implement redux toolkit
