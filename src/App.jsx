@@ -2,9 +2,8 @@
 import { Navigate, Route, Router, Routes, useLocation, useMatch } from 'react-router-dom';
 import "./App.css";
 import SignIn from "./routes/SignIn";
-import AdminAccounts from './routes/AdminAccounts';
-import Header from './layouts/Header';
-import Sidebar from './layouts/Sidebar';
+import NotFound from './routes/404';
+import Dashboard from './layouts/Dashboard';
 
 const ProtectedRoute = ({
   authUser,
@@ -22,14 +21,13 @@ const authUser = true;
 const App = () => {
   return (
     <Routes>
+      <Route exact path="/" element={<Navigate to="/signin" replace />} />
       <Route path="signin" element={<SignIn />} />
       <Route
-        path="dashboard/admin-accounts"
+        path="dashboard"
         element={
           <ProtectedRoute authUser={authUser}>
-            <Header></Header>
-            <Sidebar></Sidebar>
-            <AdminAccounts />
+            <Dashboard></Dashboard>
           </ProtectedRoute>
         }
       />
@@ -53,6 +51,7 @@ const App = () => {
           </ProtectedRoute>
         }
       /> */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

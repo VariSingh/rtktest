@@ -128,8 +128,8 @@ const AdminAccounts = () => {
         <Toolbar />
         <Typography variant="h5">List of Admin Accounts</Typography>
         <SubmitButton color="error">Add new user</SubmitButton>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={12}>
+        <Grid container spacing={2} columns={{xs:12}}>
+          <Grid item xs={12} sm={12} md={12}>
             <TableContainer component={Paper}>
               <Table aria-label="simple table">
                 <TableHead>
